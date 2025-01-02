@@ -1,5 +1,15 @@
 {
   "name": "postcss-remove-font-face",
+  "description": "Remove @font-face blocks to avoid downloading fonts and speed up your websites",
+  "keywords": [
+    "css",
+    "postcss",
+    "at-font-face",
+    "at-rule",
+    "vite",
+    "rollup",
+    "webpack"
+  ],
   "homepage": "https://github.com/guoyunhe/postcss-remove-font-face#readme",
   "bugs": {
     "url": "https://github.com/guoyunhe/postcss-remove-font-face/issues"
