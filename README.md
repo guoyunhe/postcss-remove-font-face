@@ -14,6 +14,17 @@ npm install --save-dev postcss-remove-font-face
 
 ## Configuration
 
+### PostCSS
+
+```js
+// postcss.config.ts
+import postcssRemoveFontFace from 'postcss-remove-font-face';
+
+export default {
+  plugins: [postcssRemoveFontFace()],
+};
+```
+
 ### Vite
 
 ```js
