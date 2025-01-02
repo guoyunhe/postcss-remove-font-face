@@ -60,5 +60,6 @@
     "doc": {
       "basename": "/postcss-remove-font-face/"
     }
-  }
+  },
+  "version": "1.0.0"
 }
