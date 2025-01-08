@@ -4,9 +4,7 @@ export interface PostcssRemoveFontFaceOptions {
   fontFamilyWhiteList?: string[];
 }
 
-const postcssRemoveFontFace: PluginCreator<PostcssRemoveFontFaceOptions> = ({
-  fontFamilyWhiteList,
-}) => {
+const postcssRemoveFontFace: PluginCreator<PostcssRemoveFontFaceOptions> = (options) => {
   return {
     postcssPlugin: 'postcss-remove-font-face',
     AtRule: {
@@ -17,7 +15,7 @@ const postcssRemoveFontFace: PluginCreator<PostcssRemoveFontFaceOptions> = ({
             fontFamily = decl.value?.replaceAll('"', '')?.replaceAll("'", '');
           }
         });
-        if (fontFamilyWhiteList?.includes(fontFamily)) {
+        if (options?.fontFamilyWhiteList?.includes(fontFamily)) {
           return;
         }
         rule.remove();
