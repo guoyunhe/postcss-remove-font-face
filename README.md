@@ -12,9 +12,11 @@ Remove @font-face blocks to avoid downloading fonts and speed up your websites.
 npm install --save-dev postcss-remove-font-face
 ```
 
-## Configuration
+## Examples
 
 ### PostCSS
+
+Ignore all remote fonts:
 
 ```js
 // postcss.config.ts
@@ -22,6 +24,21 @@ import postcssRemoveFontFace from 'postcss-remove-font-face';
 
 export default {
   plugins: [postcssRemoveFontFace()],
+};
+```
+
+Ignore all remote fonts, except for `iconfont`:
+
+```js
+// postcss.config.ts
+import postcssRemoveFontFace from 'postcss-remove-font-face';
+
+export default {
+  plugins: [
+    postcssRemoveFontFace({
+      fontFamilyWhiteList: ['iconfont'],
+    }),
+  ],
 };
 ```
 
@@ -39,3 +56,11 @@ export default defineConfig({
   },
 });
 ```
+
+## Options
+
+### fontFamilyWhiteList
+
+`@font-face` that match the `font-family` white list will not be removed.
+
+This is usually useful for icon fonts, which may break the site if removed.
